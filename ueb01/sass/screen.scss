@@ -1,0 +1,125 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+//@import "compass/reset";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/typography/lists/horizontal-list";
+@import "susy";
+
+@import "font-awesome";
+
+$susy: (
+  columns: 12,
+  gutter-position: split,
+);
+
+$header-background-color: black;
+$header-color: scale-lightness($header-background-color, 90);
+$header-shadow-color: scale-lightness($header-background-color, 75);
+$header-nav-background-color: scale-lightness($header-background-color, 75);
+
+$content-background-color: darkblue;
+$content-color: scale-lightness($content-background-color, 80);
+$content-shadow-color: scale-lightness($content-background-color, 80);
+
+#wrap {
+  @include container;
+
+  max-width: 1000px;
+
+  .name {
+    font-variant: small-caps;
+  }
+
+  header {
+    @include span(12);
+    @include border-radius(6px);
+    @include single-box-shadow(6px, 6px, 2px, 0px, $header-shadow-color);
+    background-color: $header-background-color;
+    color: $header-color;
+    margin-bottom: 0.5em;
+    
+    h1 {
+      margin: 0.5em;
+    }
+
+    nav {
+      ul {
+        @include horizontal-list-container;
+
+        li {
+          @include horizontal-list-item;
+          @include border-radius(4px);
+          background-color: $header-nav-background-color;
+          color: white;
+          padding: 5px;
+          margin: 0em 0.25em 0.25em 0.25em;
+
+          &:first-child {
+            padding-left: 5px;
+          }
+
+          &:last-child {
+            padding-right: 5px;
+          }
+
+          a {
+            color: $header-background-color;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    @include span(12);
+    @include border-radius(6px);
+    @include single-box-shadow(6px, 6px, 2px, 0px, $content-shadow-color);
+    background-color: $content-background-color;
+    color: $content-color;
+
+    .factcard {
+      @media (max-width: 600px) {
+        @include span(12);
+      }
+      @media (min-width: 601px) and (max-width: 800px) {
+        @include span(6);
+      }
+      @media (min-width: 801px) {
+        @include span(4);
+      }
+      @include border-radius(3px);
+      border: 1px solid white;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      box-sizing: border-box;
+
+      img {
+        float: left;
+        padding: 0.5em;
+      }
+
+      .position {
+        font-weight: bold;
+      }
+
+      a {
+        color: $content-color;
+      }
+
+      li {
+        @include no-bullets;
+        text-align: justify;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+
+        i + a {
+          font-size: 90%;
+        }
+      }
+    }
+  }
+}
