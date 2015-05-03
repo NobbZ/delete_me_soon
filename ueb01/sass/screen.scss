@@ -21,6 +21,10 @@ $header-color: scale-lightness($header-background-color, 90);
 $header-shadow-color: scale-lightness($header-background-color, 75);
 $header-nav-background-color: scale-lightness($header-background-color, 75);
 
+$footer-background-color: black;
+$footer-color: scale-lightness($footer-background-color, 90);
+$footer-shadow-color: scale-lightness($footer-background-color, 75);
+
 $content-background-color: darkblue;
 $content-color: scale-lightness($content-background-color, 80);
 $content-shadow-color: scale-lightness($content-background-color, 80);
@@ -74,10 +78,25 @@ $content-shadow-color: scale-lightness($content-background-color, 80);
     }
   }
 
+  footer {
+    @include span(12);
+    @include border-radius(6px);
+    @include single-box-shadow(6px, -6px, 2px, 0px, $footer-shadow-color);
+    background-color: $footer-background-color;
+    color: $footer-color;
+    margin-top: 0.5em;
+
+    a {
+      margin: 0.5em;
+      float: right;
+      color: $footer-color;
+    }
+  }
+
   .content {
     @include span(12);
     @include border-radius(6px);
-    @include single-box-shadow(6px, 6px, 2px, 0px, $content-shadow-color);
+    @include single-box-shadow(6px, 0px, 2px, 0px, $content-shadow-color);
     background-color: $content-background-color;
     color: $content-color;
 
