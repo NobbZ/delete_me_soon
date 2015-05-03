@@ -2896,7 +2896,7 @@
   content: "";
 }
 
-/* line 32, ../sass/screen.scss */
+/* line 34, ../sass/screen.scss */
 #wrap {
   max-width: 100%;
   margin-left: auto;
@@ -2909,11 +2909,11 @@
   display: block;
   clear: both;
 }
-/* line 37, ../sass/screen.scss */
+/* line 39, ../sass/screen.scss */
 #wrap .name {
   font-variant: small-caps;
 }
-/* line 41, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 #wrap header {
   width: 98.33333%;
   float: left;
@@ -2927,13 +2927,13 @@
   box-shadow: 6px 6px 2px 0px #bfbfbf;
   background-color: black;
   color: #e6e6e6;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.6em;
 }
-/* line 49, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 #wrap header h1 {
   margin: 0.5em;
 }
-/* line 54, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 #wrap header nav ul {
   margin: 0;
   padding: 0;
@@ -2941,7 +2941,7 @@
   overflow: hidden;
   *zoom: 1;
 }
-/* line 57, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 #wrap header nav ul li {
   list-style-image: none;
   list-style-type: none;
@@ -2970,19 +2970,19 @@
 #wrap header nav ul li.last {
   padding-right: 0;
 }
-/* line 65, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
 #wrap header nav ul li:first-child {
   padding-left: 5px;
 }
-/* line 69, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 #wrap header nav ul li:last-child {
   padding-right: 5px;
 }
-/* line 73, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 #wrap header nav ul li a {
   color: black;
 }
-/* line 81, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 #wrap footer {
   width: 98.33333%;
   float: left;
@@ -2996,15 +2996,15 @@
   box-shadow: 6px -6px 2px 0px #bfbfbf;
   background-color: black;
   color: #e6e6e6;
-  margin-top: 0.5em;
+  margin-top: 0.6em;
 }
-/* line 89, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 #wrap footer a {
   margin: 0.5em;
   float: right;
   color: #e6e6e6;
 }
-/* line 96, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
 #wrap .content {
   width: 98.33333%;
   float: left;
@@ -3019,7 +3019,7 @@
   background-color: darkblue;
   color: #b5b5ff;
 }
-/* line 103, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 #wrap .content .factcard {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -3030,7 +3030,7 @@
   box-sizing: border-box;
 }
 @media (max-width: 600px) {
-  /* line 103, ../sass/screen.scss */
+  /* line 105, ../sass/screen.scss */
   #wrap .content .factcard {
     width: 98.33333%;
     float: left;
@@ -3039,7 +3039,7 @@
   }
 }
 @media (min-width: 601px) and (max-width: 800px) {
-  /* line 103, ../sass/screen.scss */
+  /* line 105, ../sass/screen.scss */
   #wrap .content .factcard {
     width: 48.33333%;
     float: left;
@@ -3048,7 +3048,7 @@
   }
 }
 @media (min-width: 801px) {
-  /* line 103, ../sass/screen.scss */
+  /* line 105, ../sass/screen.scss */
   #wrap .content .factcard {
     width: 31.66667%;
     float: left;
@@ -3056,20 +3056,20 @@
     margin-right: 0.83333%;
   }
 }
-/* line 119, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 #wrap .content .factcard img {
   float: left;
   padding: 0.5em;
 }
-/* line 124, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 #wrap .content .factcard .position {
   font-weight: bold;
 }
-/* line 128, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 #wrap .content .factcard a {
   color: #b5b5ff;
 }
-/* line 132, ../sass/screen.scss */
+/* line 134, ../sass/screen.scss */
 #wrap .content .factcard li {
   list-style: none;
   text-align: justify;
@@ -3082,7 +3082,7 @@
   list-style-type: none;
   margin-left: 0;
 }
-/* line 138, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 #wrap .content .factcard li i + a {
   font-size: 90%;
 }

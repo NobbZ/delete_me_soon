@@ -29,6 +29,8 @@ $content-background-color: darkblue;
 $content-color: scale-lightness($content-background-color, 80);
 $content-shadow-color: scale-lightness($content-background-color, 80);
 
+$area-gap: 0.6em;
+
 #wrap {
   @include container;
 
@@ -44,7 +46,7 @@ $content-shadow-color: scale-lightness($content-background-color, 80);
     @include single-box-shadow(6px, 6px, 2px, 0px, $header-shadow-color);
     background-color: $header-background-color;
     color: $header-color;
-    margin-bottom: 0.5em;
+    margin-bottom: $area-gap;
     
     h1 {
       margin: 0.5em;
@@ -84,7 +86,7 @@ $content-shadow-color: scale-lightness($content-background-color, 80);
     @include single-box-shadow(6px, -6px, 2px, 0px, $footer-shadow-color);
     background-color: $footer-background-color;
     color: $footer-color;
-    margin-top: 0.5em;
+    margin-top: $area-gap;
 
     a {
       margin: 0.5em;
