@@ -7,6 +7,7 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 @import "compass/typography/lists/horizontal-list";
+@import "compass/typography/lists/inline-list";
 @import "susy";
 
 @import "font-awesome";
@@ -144,33 +145,23 @@ $area-gap: 0.6em;
     }
 
     #previews {
-      @include span(8);
-      
+      @media (max-width: 600px) {
+        @include span(12 last);
+      }
+      @media (min-width: 601px) {
+        @include span(8);
+      }
+
       #teaser {
         @include span(12 last);
         @include border-radius(3px);
         border: 1px solid white;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
-        text-align: justify;
         box-sizing: border-box;
 
-        p {
-          margin-left: 0.5em;
-          margin-right: 0.5em;
-
-          a {
-            color: $content-color;
-            float: right;
-
-            &::before {
-              content: "<";
-            }
-
-            &::after {
-              content: ">";
-            }
-          }
+        h2 {
+          margin-top: 0.4em;
         }
 
         img {
@@ -180,8 +171,59 @@ $area-gap: 0.6em;
         }
       }
 
+      .shortteaser {
+        @media (max-width: 600px) {
+          @include span(12);
+        }
+        @media (min-width: 601px) and (max-width: 800px) {
+          @include span(6);
+        }
+        @media (min-width: 801px) {
+          @include span(4);
+        }
+        @include border-radius(3px);
+        border: 1px solid white;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        box-sizing: border-box;
+      }
+
+      p {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        text-align: justify;
+
+        a {
+          color: $content-color;
+          float: right;
+
+          &::before {
+            content: "<";
+          }
+
+          &::after {
+            content: ">";
+          }
+        }
+      }
+
       & + #info {
-        @include span(4);
+        @media (max-width: 600px) {
+          @include span(12 last);
+          h2 {
+            display: inline;
+
+            &::after {
+              content: ": ";
+            }
+          }
+          ul {
+            @include delimited-list(" ⋄ ");
+          }
+        }
+        @media (min-width: 601px) {
+          @include span(4 last);
+        }
         @include border-radius(3px);
         border: 1px solid white;
         box-sizing: border-box;
