@@ -27,6 +27,10 @@ $content-shadow-color: scale-lightness($content-background-color, 80);
 
 $area-gap: 0.6em;
 
+$shadow-offset: $area-gap * 0.75;
+$shadow-blur: $shadow-offset * 0.2;
+$shadow-spread: $shadow-offset * 0.1;
+
 $columns: 12;
 
 $outer-border-radius: 6px;
@@ -50,7 +54,11 @@ $susy: (
   header {
     @include span($columns last);
     @include border-radius($outer-border-radius);
-    @include single-box-shadow(6px, 6px, 2px, 0px, $header-shadow-color);
+    @include single-box-shadow($shadow-offset,
+                               $shadow-offset,
+                               $shadow-blur,
+                               $shadow-spread,
+                               $header-shadow-color);
     background-color: $header-background-color;
     color: $header-color;
     margin-bottom: $area-gap;
@@ -90,7 +98,11 @@ $susy: (
   footer {
     @include span($columns last);
     @include border-radius($outer-border-radius);
-    @include single-box-shadow(6px, -6px, 2px, 0px, $footer-shadow-color);
+    @include single-box-shadow($shadow-offset,
+                               -$shadow-offset,
+                               $shadow-blur,
+                               $shadow-spread,
+                               $footer-shadow-color);
     background-color: $footer-background-color;
     color: $footer-color;
     margin-top: $area-gap;
@@ -105,7 +117,11 @@ $susy: (
   .content {
     @include span($columns last);
     @include border-radius($outer-border-radius);
-    @include single-box-shadow(6px, 0px, 2px, 0px, $content-shadow-color);
+    @include single-box-shadow($shadow-offset,
+                               0px,
+                               $shadow-blur,
+                               $shadow-spread,
+                               $content-shadow-color);
     background-color: $content-background-color;
     color: $content-color;
 
