@@ -29,10 +29,15 @@ $area-gap: 0.6em;
 
 $columns: 12;
 
+$outer-border-radius: 6px;
+$inner-border-radius: $outer-border-radius / 2;
+$image-border-radius: $outer-border-radius * 3;
+
 $susy: (
   columns: $columns,
   gutter-position: split,
 );
+
 #wrap {
   @include container;
 
@@ -43,8 +48,8 @@ $susy: (
   }
 
   header {
-    @include border-radius(6px);
     @include span($columns last);
+    @include border-radius($outer-border-radius);
     @include single-box-shadow(6px, 6px, 2px, 0px, $header-shadow-color);
     background-color: $header-background-color;
     color: $header-color;
@@ -60,7 +65,7 @@ $susy: (
 
         li {
           @include horizontal-list-item;
-          @include border-radius(4px);
+          @include border-radius($inner-border-radius);
           background-color: $header-nav-background-color;
           color: white;
           padding: 5px;
@@ -83,8 +88,8 @@ $susy: (
   }
 
   footer {
-    @include border-radius(6px);
     @include span($columns last);
+    @include border-radius($outer-border-radius);
     @include single-box-shadow(6px, -6px, 2px, 0px, $footer-shadow-color);
     background-color: $footer-background-color;
     color: $footer-color;
@@ -98,8 +103,8 @@ $susy: (
   }
 
   .content {
-    @include border-radius(6px);
     @include span($columns last);
+    @include border-radius($outer-border-radius);
     @include single-box-shadow(6px, 0px, 2px, 0px, $content-shadow-color);
     background-color: $content-background-color;
     color: $content-color;
@@ -114,7 +119,7 @@ $susy: (
       @media (min-width: 801px) {
         @include span($columns / 3);
       }
-      @include border-radius(3px);
+      @include border-radius($inner-border-radius);
       border: 1px solid white;
       margin-top: 0.5em;
       margin-bottom: 0.5em;
@@ -154,8 +159,8 @@ $susy: (
       }
 
       #teaser {
-        @include border-radius(3px);
         @include span($columns last);
+        @include border-radius($inner-border-radius);
         border: 1px solid white;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
@@ -166,7 +171,7 @@ $susy: (
         }
 
         img {
-          @include border-radius(20px);
+          @include border-radius($image-border-radius);
           float: left;
           padding: 0.5em;
         }
@@ -182,7 +187,7 @@ $susy: (
         @media (min-width: 801px) {
           @include span($columns / 3);
         }
-        @include border-radius(3px);
+        @include border-radius($inner-border-radius);
         border: 1px solid white;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
@@ -225,7 +230,7 @@ $susy: (
         @media (min-width: 601px) {
           @include span($columns / 3 last);
         }
-        @include border-radius(3px);
+        @include border-radius($inner-border-radius);
         border: 1px solid white;
         box-sizing: border-box;
         margin-top: 0.5em;
