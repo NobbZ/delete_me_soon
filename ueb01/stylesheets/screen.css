@@ -3087,7 +3087,14 @@
   font-size: 90%;
 }
 /* line 146, ../sass/screen.scss */
-#wrap .content #teaser {
+#wrap .content #previews {
+  width: 65%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+}
+/* line 149, ../sass/screen.scss */
+#wrap .content #previews #teaser {
   width: 98.33333%;
   float: right;
   margin-left: 0.83333%;
@@ -3101,38 +3108,31 @@
   text-align: justify;
   box-sizing: border-box;
 }
-/* line 155, ../sass/screen.scss */
-#wrap .content #teaser p {
+/* line 158, ../sass/screen.scss */
+#wrap .content #previews #teaser p {
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
-/* line 159, ../sass/screen.scss */
-#wrap .content #teaser p a {
+/* line 162, ../sass/screen.scss */
+#wrap .content #previews #teaser p a {
   color: #b5b5ff;
   float: right;
 }
-/* line 163, ../sass/screen.scss */
-#wrap .content #teaser p a::before {
+/* line 166, ../sass/screen.scss */
+#wrap .content #previews #teaser p a::before {
   content: "<";
 }
-/* line 167, ../sass/screen.scss */
-#wrap .content #teaser p a::after {
+/* line 170, ../sass/screen.scss */
+#wrap .content #previews #teaser p a::after {
   content: ">";
 }
-/* line 173, ../sass/screen.scss */
-#wrap .content #teaser img {
+/* line 176, ../sass/screen.scss */
+#wrap .content #previews #teaser img {
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
   float: left;
   padding: 0.5em;
-}
-/* line 180, ../sass/screen.scss */
-#wrap .content #previews {
-  width: 65%;
-  float: left;
-  margin-left: 0.83333%;
-  margin-right: 0.83333%;
 }
 /* line 183, ../sass/screen.scss */
 #wrap .content #previews + #info {
