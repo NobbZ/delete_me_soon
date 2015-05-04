@@ -12,11 +12,6 @@
 
 @import "font-awesome";
 
-$susy: (
-  columns: 12,
-  gutter-position: split,
-);
-
 $header-background-color: black;
 $header-color: scale-lightness($header-background-color, 90);
 $header-shadow-color: scale-lightness($header-background-color, 75);
@@ -32,6 +27,12 @@ $content-shadow-color: scale-lightness($content-background-color, 80);
 
 $area-gap: 0.6em;
 
+$columns: 12;
+
+$susy: (
+  columns: $columns,
+  gutter-position: split,
+);
 #wrap {
   @include container;
 
@@ -42,8 +43,8 @@ $area-gap: 0.6em;
   }
 
   header {
-    @include span(12);
     @include border-radius(6px);
+    @include span($columns last);
     @include single-box-shadow(6px, 6px, 2px, 0px, $header-shadow-color);
     background-color: $header-background-color;
     color: $header-color;
@@ -82,8 +83,8 @@ $area-gap: 0.6em;
   }
 
   footer {
-    @include span(12);
     @include border-radius(6px);
+    @include span($columns last);
     @include single-box-shadow(6px, -6px, 2px, 0px, $footer-shadow-color);
     background-color: $footer-background-color;
     color: $footer-color;
@@ -97,21 +98,21 @@ $area-gap: 0.6em;
   }
 
   .content {
-    @include span(12);
     @include border-radius(6px);
+    @include span($columns last);
     @include single-box-shadow(6px, 0px, 2px, 0px, $content-shadow-color);
     background-color: $content-background-color;
     color: $content-color;
 
     .factcard {
       @media (max-width: 600px) {
-        @include span(12);
+        @include span($columns last);
       }
       @media (min-width: 601px) and (max-width: 800px) {
-        @include span(6);
+        @include span($columns / 2);
       }
       @media (min-width: 801px) {
-        @include span(4);
+        @include span($columns / 3);
       }
       @include border-radius(3px);
       border: 1px solid white;
@@ -146,15 +147,15 @@ $area-gap: 0.6em;
 
     #previews {
       @media (max-width: 600px) {
-        @include span(12 last);
+        @include span($columns last);
       }
       @media (min-width: 601px) {
-        @include span(8);
+        @include span($columns * 2 / 3);
       }
 
       #teaser {
-        @include span(12 last);
         @include border-radius(3px);
+        @include span($columns last);
         border: 1px solid white;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
@@ -173,13 +174,13 @@ $area-gap: 0.6em;
 
       .shortteaser {
         @media (max-width: 600px) {
-          @include span(12);
+          @include span($columns);
         }
         @media (min-width: 601px) and (max-width: 800px) {
-          @include span(6);
+          @include span($columns / 2);
         }
         @media (min-width: 801px) {
-          @include span(4);
+          @include span($columns / 3);
         }
         @include border-radius(3px);
         border: 1px solid white;
@@ -209,7 +210,7 @@ $area-gap: 0.6em;
 
       & + #info {
         @media (max-width: 600px) {
-          @include span(12 last);
+          @include span($columns last);
           h2 {
             display: inline;
 
@@ -222,7 +223,7 @@ $area-gap: 0.6em;
           }
         }
         @media (min-width: 601px) {
-          @include span(4 last);
+          @include span($columns / 3 last);
         }
         @include border-radius(3px);
         border: 1px solid white;
