@@ -118,13 +118,13 @@ $area-gap: 0.6em;
       margin-bottom: 0.5em;
       box-sizing: border-box;
 
+      .position {
+        font-weight: bold;
+      }
+
       img {
         float: left;
         padding: 0.5em;
-      }
-
-      .position {
-        font-weight: bold;
       }
 
       a {
@@ -140,6 +140,53 @@ $area-gap: 0.6em;
         i + a {
           font-size: 90%;
         }
+      }
+    }
+
+    #teaser {
+      @include span(12 last);
+      @include border-radius(3px);
+      border: 1px solid white;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      text-align: justify;
+      box-sizing: border-box;
+
+      p {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+
+        a {
+          color: $content-color;
+          float: right;
+
+          &::before {
+            content: "<";
+          }
+
+          &::after {
+            content: ">";
+          }
+        }
+      }
+
+      img {
+        @include border-radius(20px);
+        float: left;
+        padding: 0.5em;
+      }
+    }
+
+    #previews {
+      @include span(8);
+      
+      & + #info {
+        @include span(4);
+        @include border-radius(3px);
+        border: 1px solid white;
+        box-sizing: border-box;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
       }
     }
   }

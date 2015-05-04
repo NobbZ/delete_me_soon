@@ -3057,13 +3057,13 @@
   }
 }
 /* line 121, ../sass/screen.scss */
+#wrap .content .factcard .position {
+  font-weight: bold;
+}
+/* line 125, ../sass/screen.scss */
 #wrap .content .factcard img {
   float: left;
   padding: 0.5em;
-}
-/* line 126, ../sass/screen.scss */
-#wrap .content .factcard .position {
-  font-weight: bold;
 }
 /* line 130, ../sass/screen.scss */
 #wrap .content .factcard a {
@@ -3085,4 +3085,66 @@
 /* line 140, ../sass/screen.scss */
 #wrap .content .factcard li i + a {
   font-size: 90%;
+}
+/* line 146, ../sass/screen.scss */
+#wrap .content #teaser {
+  width: 98.33333%;
+  float: right;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid white;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  text-align: justify;
+  box-sizing: border-box;
+}
+/* line 155, ../sass/screen.scss */
+#wrap .content #teaser p {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+/* line 159, ../sass/screen.scss */
+#wrap .content #teaser p a {
+  color: #b5b5ff;
+  float: right;
+}
+/* line 163, ../sass/screen.scss */
+#wrap .content #teaser p a::before {
+  content: "<";
+}
+/* line 167, ../sass/screen.scss */
+#wrap .content #teaser p a::after {
+  content: ">";
+}
+/* line 173, ../sass/screen.scss */
+#wrap .content #teaser img {
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  float: left;
+  padding: 0.5em;
+}
+/* line 180, ../sass/screen.scss */
+#wrap .content #previews {
+  width: 65%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+}
+/* line 183, ../sass/screen.scss */
+#wrap .content #previews + #info {
+  width: 31.66667%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
