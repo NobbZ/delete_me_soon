@@ -3,17 +3,26 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 54, ../sass/screen.scss */
-body {
-  max-width: 1000px;
-  min-width: 350px;
-}
-
-/* line 59, ../sass/screen.scss */
+/* Set colors for header-area */
+/* Set colors for footer-area */
+/* Set colors for content-area */
+/* Set the gap between header, content, and footer areas */
+/* Calculate shadow dimensions depending on the $area-gap */
+/* Set number of columns in the layout. This is set much higher than needed
+   because low numbers produces large gutter */
+/* Set radii of borders */
+/* Set dimensions for media-queries */
+/* Initialize susy */
+/*! Outermost container */
+/* line 65, ../sass/screen.scss */
 #wrap {
+  /*! Create a container for column layout */
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  /*! Specify max and min dimensions for the pages content */
+  max-width: 1000px;
+  min-width: 350px;
 }
 /* line 12, ../../../../../../.rvm/gems/ruby-2.2.0/gems/susy-2.2.3/sass/susy/output/support/_clearfix.scss */
 #wrap:after {
@@ -21,40 +30,52 @@ body {
   display: block;
   clear: both;
 }
-/* line 62, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 #wrap .name {
+  /*! We want to use small caps for all kind of person's names.
+      Use <span class="name"> */
   font-variant: small-caps;
 }
-/* line 66, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 #wrap header {
+  /*! Make header full-width and last box */
   width: 98.33333%;
   float: right;
   margin-left: 0.83333%;
   margin-right: 0.83333%;
+  /*! Specify border radius */
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
+  /*! Specify box-shadow */
   -moz-box-shadow: 0.45em 0.45em 0.09em 0.045em #bfbfbf;
   -webkit-box-shadow: 0.45em 0.45em 0.09em 0.045em #bfbfbf;
   box-shadow: 0.45em 0.45em 0.09em 0.045em #bfbfbf;
+  /*! Specify colors used in the header */
   background-color: black;
   color: #e6e6e6;
+  /*! Specify margins of the header */
   margin-bottom: 0.6em;
+  /*! This is used for the actual headline in the header */
+  /*! Style the navigation bar */
 }
-/* line 78, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 #wrap header h1 {
+  /*! Specify margin to all directions */
   margin: 0.5em;
 }
-/* line 83, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 #wrap header nav ul {
+  /*! Make this a horizontal list, very similar but not equal to tabs */
   margin: 0;
   padding: 0;
   border: 0;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 86, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 #wrap header nav ul li {
+  /*! More details about horizontal list */
   list-style-image: none;
   list-style-type: none;
   margin-left: 0;
@@ -62,11 +83,13 @@ body {
   float: left;
   padding-left: 4px;
   padding-right: 4px;
+  /*! Specify border radius */
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+  /*! Specify colors */
   background-color: #bfbfbf;
-  color: white;
+  /*! Specify padding and margin */
   padding: 5px;
   margin: 0em 0.25em 0.25em 0.25em;
 }
@@ -82,19 +105,23 @@ body {
 #wrap header nav ul li.last {
   padding-right: 0;
 }
-/* line 94, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 #wrap header nav ul li:first-child {
+  /*! readd some padding that was removed by compass earlier */
   padding-left: 5px;
 }
-/* line 98, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 #wrap header nav ul li:last-child {
+  /*! readd some padding that was removed by compass earlier */
   padding-right: 5px;
 }
-/* line 102, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 #wrap header nav ul li a {
+  /*! Since the labels of the nav-items are links, I need to style
+      them here explicitely and can't use a color in parental li-rule */
   color: black;
 }
-/* line 110, ../sass/screen.scss */
+/* line 139, ../sass/screen.scss */
 #wrap footer {
   width: 98.33333%;
   float: right;
@@ -110,13 +137,13 @@ body {
   color: #e6e6e6;
   margin-top: 0.6em;
 }
-/* line 122, ../sass/screen.scss */
+/* line 151, ../sass/screen.scss */
 #wrap footer a {
   margin: 0.5em;
   float: right;
   color: #e6e6e6;
 }
-/* line 129, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 #wrap .content {
   width: 98.33333%;
   float: right;
@@ -131,7 +158,7 @@ body {
   background-color: darkblue;
   color: #b5b5ff;
 }
-/* line 140, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 #wrap .content .factcard {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -142,7 +169,7 @@ body {
   box-sizing: border-box;
 }
 @media (min-width: 350px) and (max-width: 599px) {
-  /* line 140, ../sass/screen.scss */
+  /* line 169, ../sass/screen.scss */
   #wrap .content .factcard {
     width: 98.33333%;
     float: right;
@@ -151,7 +178,7 @@ body {
   }
 }
 @media (min-width: 600px) and (max-width: 799px) {
-  /* line 140, ../sass/screen.scss */
+  /* line 169, ../sass/screen.scss */
   #wrap .content .factcard {
     width: 48.33333%;
     float: left;
@@ -160,7 +187,7 @@ body {
   }
 }
 @media (min-width: 800px) and (max-width: 1000px) {
-  /* line 140, ../sass/screen.scss */
+  /* line 169, ../sass/screen.scss */
   #wrap .content .factcard {
     width: 31.66667%;
     float: left;
@@ -168,20 +195,20 @@ body {
     margin-right: 0.83333%;
   }
 }
-/* line 156, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 #wrap .content .factcard .position {
   font-weight: bold;
 }
-/* line 160, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 #wrap .content .factcard img {
   float: left;
   padding: 0.5em;
 }
-/* line 165, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 #wrap .content .factcard a {
   color: #b5b5ff;
 }
-/* line 169, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 #wrap .content .factcard li {
   list-style: none;
   text-align: justify;
@@ -194,12 +221,12 @@ body {
   list-style-type: none;
   margin-left: 0;
 }
-/* line 175, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 #wrap .content .factcard li i + a {
   font-size: 90%;
 }
 @media (min-width: 350px) and (max-width: 599px) {
-  /* line 181, ../sass/screen.scss */
+  /* line 210, ../sass/screen.scss */
   #wrap .content #previews {
     width: 98.33333%;
     float: right;
@@ -208,7 +235,7 @@ body {
   }
 }
 @media (min-width: 600px) and (max-width: 1000px) {
-  /* line 181, ../sass/screen.scss */
+  /* line 210, ../sass/screen.scss */
   #wrap .content #previews {
     width: 65%;
     float: left;
@@ -216,7 +243,7 @@ body {
     margin-right: 0.83333%;
   }
 }
-/* line 189, ../sass/screen.scss */
+/* line 218, ../sass/screen.scss */
 #wrap .content #previews #teaser {
   width: 98.33333%;
   float: right;
@@ -230,11 +257,11 @@ body {
   margin-bottom: 0.5em;
   box-sizing: border-box;
 }
-/* line 197, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 #wrap .content #previews #teaser h2 {
   margin-top: 0.4em;
 }
-/* line 201, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 #wrap .content #previews #teaser img {
   -moz-border-radius: 18px;
   -webkit-border-radius: 18px;
@@ -242,7 +269,7 @@ body {
   float: left;
   padding: 0.5em;
 }
-/* line 208, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 #wrap .content #previews .shortteaser {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -253,7 +280,7 @@ body {
   box-sizing: border-box;
 }
 @media (min-width: 350px) and (max-width: 599px) {
-  /* line 208, ../sass/screen.scss */
+  /* line 237, ../sass/screen.scss */
   #wrap .content #previews .shortteaser {
     width: 98.33333%;
     float: left;
@@ -262,7 +289,7 @@ body {
   }
 }
 @media (min-width: 600px) and (max-width: 799px) {
-  /* line 208, ../sass/screen.scss */
+  /* line 237, ../sass/screen.scss */
   #wrap .content #previews .shortteaser {
     width: 48.33333%;
     float: left;
@@ -271,7 +298,7 @@ body {
   }
 }
 @media (min-width: 800px) and (max-width: 1000px) {
-  /* line 208, ../sass/screen.scss */
+  /* line 237, ../sass/screen.scss */
   #wrap .content #previews .shortteaser {
     width: 31.66667%;
     float: left;
@@ -279,26 +306,26 @@ body {
     margin-right: 0.83333%;
   }
 }
-/* line 225, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 #wrap .content #previews p {
   margin-left: 0.5em;
   margin-right: 0.5em;
   text-align: justify;
 }
-/* line 230, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 #wrap .content #previews p a {
   color: #b5b5ff;
   float: right;
 }
-/* line 234, ../sass/screen.scss */
+/* line 263, ../sass/screen.scss */
 #wrap .content #previews p a::before {
   content: "<";
 }
-/* line 238, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 #wrap .content #previews p a::after {
   content: ">";
 }
-/* line 244, ../sass/screen.scss */
+/* line 273, ../sass/screen.scss */
 #wrap .content #previews + #info {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -309,22 +336,22 @@ body {
   margin-bottom: 0.5em;
 }
 @media (min-width: 350px) and (max-width: 599px) {
-  /* line 244, ../sass/screen.scss */
+  /* line 273, ../sass/screen.scss */
   #wrap .content #previews + #info {
     width: 98.33333%;
     float: right;
     margin-left: 0.83333%;
     margin-right: 0.83333%;
   }
-  /* line 247, ../sass/screen.scss */
+  /* line 276, ../sass/screen.scss */
   #wrap .content #previews + #info h2 {
     display: inline;
   }
-  /* line 250, ../sass/screen.scss */
+  /* line 279, ../sass/screen.scss */
   #wrap .content #previews + #info h2::after {
     content: ": ";
   }
-  /* line 254, ../sass/screen.scss */
+  /* line 283, ../sass/screen.scss */
   #wrap .content #previews + #info ul {
     list-style-type: none;
   }
@@ -348,7 +375,7 @@ body {
   }
 }
 @media (min-width: 600px) and (max-width: 1000px) {
-  /* line 244, ../sass/screen.scss */
+  /* line 273, ../sass/screen.scss */
   #wrap .content #previews + #info {
     width: 31.66667%;
     float: right;

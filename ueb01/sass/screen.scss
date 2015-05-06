@@ -12,31 +12,40 @@
 
 //@import "font-awesome";
 
+/* Set colors for header-area */
 $header-background-color: black;
 $header-color: scale-lightness($header-background-color, 90);
 $header-shadow-color: scale-lightness($header-background-color, 75);
 $header-nav-background-color: scale-lightness($header-background-color, 75);
 
+/* Set colors for footer-area */
 $footer-background-color: black;
 $footer-color: scale-lightness($footer-background-color, 90);
 $footer-shadow-color: scale-lightness($footer-background-color, 75);
 
+/* Set colors for content-area */
 $content-background-color: darkblue;
 $content-color: scale-lightness($content-background-color, 80);
 $content-shadow-color: scale-lightness($content-background-color, 80);
 
+/* Set the gap between header, content, and footer areas */
 $area-gap: 0.6em;
 
+/* Calculate shadow dimensions depending on the $area-gap */
 $shadow-offset: $area-gap * 0.75;
 $shadow-blur: $shadow-offset * 0.2;
 $shadow-spread: $shadow-offset * 0.1;
 
+/* Set number of columns in the layout. This is set much higher than needed
+   because low numbers produces large gutter */
 $columns: 12;
 
+/* Set radii of borders */
 $outer-border-radius: 6px;
 $inner-border-radius: $outer-border-radius / 2;
 $image-border-radius: $outer-border-radius * 3;
 
+/* Set dimensions for media-queries */
 $max-width: 1000px;
 $min-width:  350px;
 $large-max-width: $max-width;
@@ -46,60 +55,80 @@ $medium-min-width: $max-width * 6 / 10;
 $small-max-width: $medium-min-width - 1px;
 $small-min-width: $min-width;
 
+/* Initialize susy */
 $susy: (
   columns: $columns,
   gutter-position: split,
 );
 
-body {
-  max-width: $max-width;
-  min-width: $min-width;
-}
-
+/*! Outermost container */
 #wrap {
+  /*! Create a container for column layout */
   @include container;
 
+  /*! Specify max and min dimensions for the pages content */
+  max-width: $max-width;
+  min-width: $min-width;
+
   .name {
+    /*! We want to use small caps for all kind of person's names.
+        Use <span class="name"> */
     font-variant: small-caps;
   }
 
   header {
+    /*! Make header full-width and last box */
     @include span($columns last);
+    /*! Specify border radius */
     @include border-radius($outer-border-radius);
+    /*! Specify box-shadow */
     @include single-box-shadow($shadow-offset,
                                $shadow-offset,
                                $shadow-blur,
                                $shadow-spread,
                                $header-shadow-color);
+    /*! Specify colors used in the header */
     background-color: $header-background-color;
     color: $header-color;
+    /*! Specify margins of the header */
     margin-bottom: $area-gap;
     
+    /*! This is used for the actual headline in the header */
     h1 {
+      /*! Specify margin to all directions */
       margin: 0.5em;
     }
 
+    /*! Style the navigation bar */
     nav {
       ul {
+        /*! Make this a horizontal list, very similar but not equal to tabs */
         @include horizontal-list-container;
 
         li {
+          /*! More details about horizontal list */
           @include horizontal-list-item;
+          /*! Specify border radius */
           @include border-radius($inner-border-radius);
+          /*! Specify colors */
           background-color: $header-nav-background-color;
-          color: white;
+          /*! Specify padding and margin */
           padding: 5px;
           margin: 0em 0.25em 0.25em 0.25em;
 
           &:first-child {
+            /*! readd some padding that was removed by compass earlier */
             padding-left: 5px;
           }
 
           &:last-child {
+            /*! readd some padding that was removed by compass earlier */
             padding-right: 5px;
           }
 
           a {
+            /*! Since the labels of the nav-items are links, I need to style
+                them here explicitely and can't use a color in parental li-rule */
             color: $header-background-color;
           }
         }
