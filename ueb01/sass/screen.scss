@@ -167,14 +167,18 @@ $susy: (
     color: $content-color;
 
     .factcard {
-      @media (min-width: $small-min-width) and (max-width: $small-max-width) {
+      @media (max-width: $small-max-width) {
         @include span($columns last);
       }
       @media (min-width: $medium-min-width) and (max-width: $medium-max-width) {
         @include span($columns / 2);
+        /*! Proper lineup on break */
+        &:nth-child(2n+1) { clear: both; }
       }
-      @media (min-width: $large-min-width) and (max-width: $large-max-width) {
+      @media (min-width: $large-min-width) {
         @include span($columns / 3);
+        /*! Proper lineup on break */
+        &:nth-child(3n+1) { clear: both; }
       }
       @include border-radius($inner-border-radius);
       border: 1px solid white;
@@ -208,10 +212,10 @@ $susy: (
     }
 
     #previews {
-      @media (min-width: $small-min-width) and (max-width: $small-max-width) {
+      @media (max-width: $small-max-width) {
         @include span($columns last);
       }
-      @media (min-width: $medium-min-width) and (max-width: $large-max-width) {
+      @media (min-width: $medium-min-width) {
         @include span($columns * 2 / 3);
       }
 
@@ -235,13 +239,13 @@ $susy: (
       }
 
       .shortteaser {
-        @media (min-width: $small-min-width) and (max-width: $small-max-width) {
+        @media (max-width: $small-max-width) {
           @include span($columns);
         }
         @media (min-width: $medium-min-width) and (max-width: $medium-max-width) {
           @include span($columns / 2);
         }
-        @media (min-width: $large-min-width) and (max-width: $large-max-width) {
+        @media (min-width: $large-min-width) {
           @include span($columns / 3);
         }
         @include border-radius($inner-border-radius);
@@ -271,7 +275,7 @@ $susy: (
       }
 
       & + #info {
-        @media (min-width: $small-min-width) and (max-width: $small-max-width) {
+        @media (max-width: $small-max-width) {
           @include span($columns last);
           h2 {
             display: inline;
@@ -284,7 +288,7 @@ $susy: (
             @include delimited-list(" ⋄ ");
           }
         }
-        @media (min-width: $medium-min-width) and (max-width: $large-max-width) {
+        @media (min-width: $medium-min-width) {
           @include span($columns / 3 last);
         }
         @include border-radius($inner-border-radius);
