@@ -1,0 +1,6 @@
+@mixin outer-box ($columns, $background-color, $color, $border-radius) {
+  @include span($columns last);
+  @include border-radius($border-radius);
+  background-color: $background-color;
+  color: $color;
+}

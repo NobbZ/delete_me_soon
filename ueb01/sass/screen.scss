@@ -8,7 +8,10 @@
 @import "compass/css3/box-shadow";
 @import "compass/typography/lists/horizontal-list";
 @import "compass/typography/lists/inline-list";
+@import "compass/typography/lists/bullets";
 @import "susy";
+
+@import "mixins";
 
 //@import "font-awesome";
 
@@ -77,11 +80,15 @@ $susy: (
   }
 
   header {
-    /*! Make header full-width and last box */
-    @include span($columns last);
-    /*! Specify border radius */
-    @include border-radius($outer-border-radius);
-    /*! Specify box-shadow */
+    // /*! Make header full-width and last box */
+    // @include span($columns last);
+    // /* ! Specify border radius */
+    // @include border-radius($outer-border-radius);
+    // /*! Specify box-shadow */
+    @include outer-box($columns,
+                       $header-background-color,
+                       $header-color,
+                       $outer-border-radius);
     @include single-box-shadow($shadow-offset,
                                $shadow-offset,
                                $shadow-blur,
@@ -137,8 +144,12 @@ $susy: (
   }
 
   footer {
-    @include span($columns last);
-    @include border-radius($outer-border-radius);
+    // @include span($columns last);
+    // @include border-radius($outer-border-radius);
+    @include outer-box($columns,
+                       $footer-background-color,
+                       $footer-color,
+                       $outer-border-radius);
     @include single-box-shadow($shadow-offset,
                                -$shadow-offset,
                                $shadow-blur,
@@ -156,8 +167,12 @@ $susy: (
   }
 
   .content {
-    @include span($columns last);
-    @include border-radius($outer-border-radius);
+    // @include span($columns last);
+    // @include border-radius($outer-border-radius);
+    @include outer-box($columns,
+                       $content-background-color,
+                       $content-color,
+                       $outer-border-radius);
     @include single-box-shadow($shadow-offset,
                                0px,
                                $shadow-blur,
@@ -296,6 +311,89 @@ $susy: (
         box-sizing: border-box;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
+      }
+    }
+
+    nav.article {
+      @media (max-width: $small-max-width) {
+        @include span($columns);
+        display: none;
+      }
+      @media (min-width: $medium-min-width) {
+        @include span($columns / 4);
+      }
+      @include border-radius($inner-border-radius);
+      margin-top: 0.5em;
+      border: 1px solid white;
+      box-sizing: border-box;
+      background-color: scale-lightness($content-background-color, 80);
+
+      ul {
+        @include no-bullets;
+        padding-left: 10%;
+        padding-right: 10%;
+
+        li {
+          @include border-radius($inner-border-radius);
+          border: 1px solid black;
+          margin-bottom: 0.25em;
+        }
+
+        ul {
+          background-color: scale-lightness($content-background-color, 60);
+          li { border-style: none; }
+        }
+      }
+    }
+
+    article {
+      @media (max-width: $small-max-width) {
+        @include span($columns);
+        float: left;
+      }
+      @media (min-width: $medium-min-width) {
+        @include span(($columns * 3 / 4) last);
+      }
+      @include border-radius($inner-border-radius);
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      padding: 0.5em;
+      border: 1px solid white;
+      box-sizing: border-box;
+
+      text-align: justify;
+
+      img {
+        @include border-radius($image-border-radius);
+        padding: 0.5em;
+      }
+
+      #left {
+        @media (max-width: $small-max-width) {
+          @include span($columns last)
+        }
+        @media (min-width: $medium-min-width) {
+          @include span($columns / 2);
+        }
+
+        img {
+          float: left;
+          max-width: 75%;
+        }
+      }
+
+      #right {
+        @media (max-width: $small-max-width) {
+          @include span($columns last);
+        }
+        @media (min-width: $medium-min-width) {
+          @include span(($columns / 2) last);
+        }
+
+        img {
+          float: right;
+          max-width: 75%;
+        }
       }
     }
   }
